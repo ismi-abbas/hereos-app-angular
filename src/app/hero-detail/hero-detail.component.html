@@ -1,13 +1,6 @@
-<style>
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 4px;
-  }
-</style>
-
-<div class="wrapper">
+<div>
   <h1>Hero Details Component</h1>
+  <button type="button" (click)="goBack()">go back</button>
   <div *ngIf="hero">
     <h2>{{ hero.name | uppercase }} Details</h2>
     <div>id: {{ hero.id }}</div>

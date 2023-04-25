@@ -14,8 +14,7 @@ export class MessageService {
     this.messages = [];
   }
 
-  delete(messageId: string) {
-    // find and delete
-    this.messages = this.messages.filter((message) => message !== messageId);
+  delete() {
+    this.messages.pop();
   }
 }
