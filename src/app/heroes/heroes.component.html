@@ -1,9 +1,38 @@
-<h2>My Heroes</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <button type="button">
-      <span class="badge">{{ hero.id }}</span>
-      <span class="name">{{ hero.name }}</span>
-    </button>
-  </li>
-</ul>
+<style>
+  .hero-wrapper {
+    padding: 2px;
+    margin: 2px;
+  }
+
+  .container {
+    display: flex;
+    gap: 10px;
+    padding: 2px;
+    margin: 2px;
+  }
+</style>
+<div class="container">
+  <div class="hero-wrapper">
+    <h2>My Heroes</h2>
+    <ul class="heroes">
+      <li *ngFor="let hero of heroes">
+        <button
+          [class.selected]="hero === selectedHero"
+          type="button"
+          (click)="onSelect(hero)"
+        >
+          <span class="badge">{{ hero.id }}</span>
+          <span class="name">{{ hero.name }}</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- <div class="show-btn">
+  <button (click)="onSelectSomething(!selectSomething)">
+    <span *ngIf="selectSomething">Hide</span>
+    <span *ngIf="!selectSomething">Show</span>
+  </button>
+</div> -->
+  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+</div>

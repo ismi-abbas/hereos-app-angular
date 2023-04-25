@@ -1,0 +1,21 @@
+<style>
+  .message {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    display: inline-block;
+  }
+</style>
+
+<p class="message">messages works!</p>
+
+<div *ngIf="messageService.messages.length">
+  <h2>Messages</h2>
+
+  <div *ngFor="let message of messageService.messages">{{ message }}</div>
+  <button type="button" class="clear" (click)="messageService.clear()">
+    Clear messages
+  </button>
+</div>
